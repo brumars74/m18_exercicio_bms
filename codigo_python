@@ -1,0 +1,41 @@
+2. Preço da gasolina
+
+[9]
+0s
+%%writefile gasolina.csv
+dia,venda
+1,5.11
+2,4.99
+3,5.02
+4,5.21
+5,5.07
+6,5.09
+7,5.13
+8,5.12
+9,4.94
+10,5.03
+Writing gasolina.csv
+2.1. Desenvolvimento
+
+[10]
+1s
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+[11]
+0s
+dados = pd.read_csv('gasolina.csv')
+[12]
+1s
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='dia', y='venda', data=dados, marker='o')
+plt.title('Vendas de Gasolina por Dia')
+plt.xlabel('Dia')
+plt.ylabel('Venda (em unidades)')
+
+[13]
+0s
+plt.savefig('gasolina.png')
+
+[14]
+0s
